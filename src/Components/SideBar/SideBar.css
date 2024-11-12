@@ -1,0 +1,48 @@
+#sidebar {
+    padding: 7px;
+    background-color: black;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 50px;
+    height: 100vh;
+    box-shadow: 1px 1px 3px #333;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+}
+
+#sidebar .link,
+.active {
+    transition: all 0.3s ease;
+    color: #666;
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* style home icon */
+#sidebar .link:nth-child(1) {
+    margin-bottom: 20px;
+    color: red;
+    font-size: 28px;
+}
+
+.active {
+    border-radius: 3px;
+    background-color: var(--dark-color);
+    position: relative;
+    color: var(--light-color);
+}
+
+.active::before {
+    position: absolute;
+    content: '';
+    border-left: 2px solid red;
+    left: -5px;
+    top: -1px;
+    height: 110%;
+    border-radius: 2px;
+}

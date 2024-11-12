@@ -1,0 +1,246 @@
+#dashboard {
+    z-index: 2;
+    position: relative;
+}
+
+/* start Risk Score Card */
+.risk-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+
+.graph-wrapper {
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 1px solid #352a6c;
+    border-radius: 50%;
+    box-shadow: 5px 5px 35px #352a6c;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+}
+
+.graph-wrapper:hover {
+    box-shadow: 15px 15px 55px #352a6c;
+}
+
+.graph-wrapper .risk-score {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px #666 dashed;
+    border-radius: 50%;
+    padding: 10px;
+    width: 120px;
+    height: 120px;
+    transition: all .3s ease-in-out;
+}
+
+.graph-wrapper .risk-score h3 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.graph-wrapper .risk-score p {
+    font-size: 10px;
+    margin: 0;
+    color: #777;
+}
+
+.risk-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.risk-details label {
+    display: block;
+    font-size: 10px;
+    color: #888;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.risk-details span {
+    font-weight: bold;
+    font-size: 25px;
+
+}
+
+.risk-details div {
+    position: relative;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.risk-details div small {
+    position: absolute;
+    top: 40%;
+    left: -20%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* end Risk Score Card */
+
+/* start Unresolved Risks Card */
+.unresolved-content {
+    margin-top: 25px;
+}
+
+.unresolved-content .icon-wrapper {
+    border-radius: 50%;
+    flex-basis: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unresolved-content .icon-wrapper .risk-icon {
+    font-size: 20px;
+}
+
+/* very Lazy to give this div a name , so hope u understand 😅  */
+.unresolved-content div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.unresolved-content div .des-wrapper {
+    flex-basis: 90%;
+    position: relative;
+    margin-left: 10px;
+}
+
+.unresolved-content div .des-wrapper p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.unresolved-content div .des-wrapper span,
+.unresolved-content div .des-wrapper small {
+    color: #777;
+    font-size: 12px;
+    position: absolute;
+    top: 35px;
+    font-weight: 500;
+}
+
+.unresolved-content div .des-wrapper small {
+    right: 0;
+
+}
+
+/* end Unresolved Risks Card */
+
+/* start Asset Card */
+.asset-card {
+    padding: 0;
+}
+
+.asset-content {
+    background: url(../../assets/networks.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 315px;
+    position: relative;
+}
+
+.asset-content .asset-link {
+    position: absolute;
+    z-index: 2 !important;
+    bottom: 20px !important;
+    right: 20px;
+}
+
+.asset-content .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.asset-content div {
+    width: 70px;
+    padding: 5px;
+    text-align: center;
+    z-index: 1;
+}
+
+.asset-content div label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #777;
+}
+
+/* end Asset Card */
+
+/* start Domains Card */
+
+.domain-content div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.domain-content div .domain-img img {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    border-radius: 50%;
+    background: url(../../assets/domain.png) no-repeat center center;
+    background-size: cover;
+}
+
+.domain-content div .domain-des {
+    flex-basis: 95%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+.domain-content div .domain-des p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.domain-content div .domain-des span,
+.domain-content div .domain-des small {
+    color: #777;
+    font-size: 12px;
+    position: absolute;
+    top: 30px;
+    font-weight: 500;
+}
+
+.domain-content div .domain-des small {
+    top: 30px;
+    right: 10px;
+}

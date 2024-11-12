@@ -1,0 +1,31 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-color: #100d1f;
+  --light-color: #eee;
+}
+
+body {
+  background-color: black;
+  color: var(--light-color);
+}
+
+a{
+  text-decoration: none;
+  color: #666;
+}
+li{
+  list-style-type: none;
+}
