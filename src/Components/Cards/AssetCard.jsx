@@ -1,12 +1,13 @@
 import '../../Pages/Dashbord/Dashboard.css';
 import RootCard from './RootCard';
+import assetImg from '../../assets/networks.jpg';
 const AssetCard = () => {
     return (
-        <RootCard customStyles={{ padding: '0' }} title=""
-            children={
-                <div className='asset-content'>
+        <RootCard cardClass="asset-card" customStyles={{ padding: '0' }} title=""
+        img={assetImg}imgClass="asset-img"
+        children={
+            <div className='asset-content'>
                     <a href="#" className="asset-link">View all assets {'->'}</a>
-                    <div className="overlay"></div>
                     <div className="assets">
                         <label>Assets</label>
                         <h3>88</h3>

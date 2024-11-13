@@ -1,9 +1,10 @@
 import '../../App.css';
-const RootCard = ({ title, children ,customStyles, link }) => {
+const RootCard = ({ cardClass,title, img,imgClass, children, customStyles, link }) => {
   return (
-    <div className='card' style={{  ...customStyles }}>
+    <div className={`${cardClass} || card`} style={{ ...customStyles }}>
+      <img src={img} alt="" className={imgClass}/>
       <span className='title'>{title}</span>
-      {link && <a href="#" className="more">{link}</a>} 
+      {link && <a href="#" className="more">{link}</a>}
       <div className="content">
         {children}
       </div>

@@ -22,21 +22,21 @@ const SideBar = () => {
     }
 
     const links = [
-        { name: "home", icon: <MdHome />, route: "/home", style: {homeStyle} }, { name: "search", icon: <IoSearch />, route: "/search" },
+        { name: "home", icon: <MdHome />, route: "/home", style: { homeStyle } }, { name: "search", icon: <IoSearch />, route: "/search" },
         {
             name: "dashboard",
             icon: <AiOutlineProject style={{ transform: "rotate(180deg)" }} />,
             route: "/dashboard",
         },
         { name: "warning", icon: <IoWarningOutline />, route: "/warning" },
-        { name: "connected", icon: <MdOutlineWebhook />, route: "/connected" },
-        { name: "global", icon: <IoGlobeOutline />, route: "/global" },
+        { name: "connected", icon: <MdOutlineWebhook />, route: "/connections" },
+        { name: "global", icon: <IoGlobeOutline />, route: "/globe" },
         { name: "layers", icon: <MdOutlineLayers />, route: "/layers" }
     ];
 
 
     return (
-
+        // using normal div ( i think it`s best solution )
         <div id='sidebar'>
             {links.map((link, index) => (
                 <NavLink
@@ -52,11 +52,11 @@ const SideBar = () => {
     )
 }
 
-export default SideBar;
-
-// makeing Link component
+// this is the sidebar link component
 export const NavLink = (props) => {
     return (
         <Link to={props.route} className={props.className} style={props.style} onClick={props.onClick}>{props.icon}</Link>
     )
 }
+
+export default SideBar;

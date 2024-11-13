@@ -1,38 +1,32 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Dashboard, SideBar } from './index';
-import { FaRegUser } from "react-icons/fa6";
-import { IoSettingsOutline } from "react-icons/io5";
-import { AiOutlineQuestionCircle } from "react-icons/ai";
-import { Container } from 'react-bootstrap';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Search, Connections, Warning, Globe, Layers, Dashboard, SideBar } from './index';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function App() {
 
   return (
     <BrowserRouter>
-      <GlobalIcons />
-      <div style={{ display: 'flex' }}>
-        <SideBar />
-        <div style={{ flex: 1 }}> {/* This allows the main content to take the remaining space */}
-          <Routes>
-            <Route path='/dashboard' element={<Dashboard />} />
-          </Routes>
-        </div>
-      </div>
+      <Container fluid>
+        <Row >
+          <Col md={1} sm={1} lg={1} className="sidebar-col">
+            <SideBar />
+          </Col>
+          <Col md={11} sm={11} lg={11} className="dashboard-col">
+            <Routes>
+              <Route path='/' element={<Navigate to="/dashboard" />} />
+              <Route path='/Search' element={<Search />} />
+              <Route path='/dashboard' element={<Dashboard />} />
+              <Route path='/Warning' element={<Warning />} />
+              <Route path='Globe' element={<Globe />} />
+              <Route path='/Connections' element={<Connections />} />
+              <Route path='/Layers' element={<Layers />} />
+
+            </Routes>
+          </Col>
+        </Row>
+      </Container>
     </BrowserRouter>
-  )
-}
-
-const GlobalIcons = () => {
-  return (
-    <Container>
-      <div className="global-icons">
-        <div><AiOutlineQuestionCircle className='icon' /></div>
-        <div><IoSettingsOutline className='icon' /></div>
-        <div><FaRegUser className='icon' /></div>
-      </div>
-    </Container>
-
   )
 }
 

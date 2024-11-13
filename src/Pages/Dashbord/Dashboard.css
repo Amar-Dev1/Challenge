@@ -3,6 +3,45 @@
     position: relative;
 }
 
+.dashboard-col {
+    padding: 0;
+    margin: 0;
+}
+
+/* global icons */
+.global-icons {
+    display: flex;
+    justify-content: flex-end;
+    transform: translateY(50%);
+}
+
+.global-icons div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #333;
+    margin-left: 7px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #222;
+    transition: all .3s ease-in-out;
+    color: #888;
+    width: 30px;
+    height: 30px;
+
+}
+
+.global-icons div:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+.global-icons .icon {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+}
+
 /* start Risk Score Card */
 .risk-content {
     display: flex;
@@ -77,7 +116,6 @@
 .risk-details span {
     font-weight: bold;
     font-size: 25px;
-
 }
 
 .risk-details div {
@@ -89,10 +127,10 @@
 .risk-details div small {
     position: absolute;
     top: 40%;
-    left: -20%;
+    left: -40%;
     transform: translate(-50%, -50%);
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
     background-color: white;
     border-radius: 50%;
 }
@@ -134,8 +172,10 @@
     font-size: 14px;
     margin-bottom: 15px;
     margin-top: 15px;
-    overflow: hidden;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: break-word;
+    max-width: 90%;
+    text-overflow: ellipsis;
 }
 
 .unresolved-content div .des-wrapper span,
@@ -155,41 +195,28 @@
 /* end Unresolved Risks Card */
 
 /* start Asset Card */
-.asset-card {
-    padding: 0;
-}
-
-.asset-content {
-    background: url(../../assets/networks.jpg);
-    background-size: cover;
-    background-position: center;
-    display: flex;
+.asset-card {    display: flex;
     justify-content: flex-end;
-    align-items: flex-start;
-    flex-direction: column;
-    height: 315px;
-    position: relative;
 }
 
-.asset-content .asset-link {
-    position: absolute;
-    z-index: 2 !important;
-    bottom: 20px !important;
-    right: 20px;
-}
-
-.asset-content .overlay {
+.asset-img {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+    object-fit: cover;
 }
 
-.asset-content div {
-    width: 70px;
+.asset-content {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.asset-content div {    width: 70px;
     padding: 5px;
     text-align: center;
-    z-index: 1;
 }
 
 .asset-content div label {
@@ -198,6 +225,22 @@
     font-weight: bold;
     color: #777;
 }
+
+.asset-content .asset-link {
+    width: fit-content;
+    border: #444 solid 1px;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 3px;
+    transition: .2s;
+}
+
+.asset-content .asset-link:hover {
+    box-shadow: 3px 3px 20px #222;
+}
+
 
 /* end Asset Card */
 
@@ -227,10 +270,12 @@
     align-items: center;
     position: relative;
 }
-.domain-content div .domain-des p{
+
+.domain-content div .domain-des p {
     font-size: 14px;
     margin-bottom: 10px;
 }
+
 .domain-content div .domain-des span,
 .domain-content div .domain-des small {
     color: #777;
@@ -243,4 +288,41 @@
 .domain-content div .domain-des small {
     top: 30px;
     right: 10px;
+}
+
+@media (max-width:768px) {
+    .global-icons {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 10%;
+        right: 0;
+    }
+
+    .global-icons div {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        margin-top: 3px;
+    }
+
+    .main-title-col {
+        display: flex;
+        justify-content: center;
+    }
+
+    .unresolved-content .icon-wrapper .risk-icon {
+        font: 12px;
+    }
+
+    .unresolved-content div .des-wrapper p {
+        font-size: 10px;
+        max-width: 85%;
+    }
+
+    .unresolved-content div .des-wrapper span,
+    .unresolved-content div .des-wrapper small {
+        font-size: 8px;
+        top: 43px;
+    }
 }
